@@ -1,0 +1,7 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.analysis.extraPaths": [
+        "./My_stor"
+    ],
+    "autoDocstring.customTemplatePath": "C:\\Users\\dell\\AppData\\Local\\Programs\\Python\\Python39"
+}
