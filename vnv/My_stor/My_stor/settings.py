@@ -27,13 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'amirmawzi31@gmail.com'
-EMAIL_HOST_PASSWORD = 'amir1998'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-# Application definition
 
 INSTALLED_APPS = [
     "admin_interface",
@@ -47,6 +40,7 @@ INSTALLED_APPS = [
     'App_stor',
     "cart",
     "orders",
+    "user"
 ]
 CART_SESSION_ID = 'cart'
 

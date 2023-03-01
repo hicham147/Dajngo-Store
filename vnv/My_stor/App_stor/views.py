@@ -1,7 +1,12 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Category,Product
 from cart.forms import CartAddProductForm
+from django.core.paginator import Paginator,EmptyPage
+# how you want ot add in the one page
 
+# get the number of the page you ask for in non put 1
+
+# this is action
 
 def product_list(request, category_slug=None):
     category = None
@@ -16,10 +21,16 @@ def product_list(request, category_slug=None):
         products = Product.objects.filter(available=True)
         products_count = products.count()
         
+    p = Paginator(products,6)
+    page_num = request.GET.get('page',1)
+    try:
+        page = p.page(page_num)
+    except EmptyPage:
+        page = p.page(1)
     return render(request,'store/store.html',
                                 {'category': category,
                                 'categories': categories,
-                                'products': products,
+                                'products': page,
                                 "products_count":products_count})
     
     
